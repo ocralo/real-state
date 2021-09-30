@@ -23,11 +23,11 @@
               @click="isOpen = !isOpen"
             >
               <span class="sr-only">Open main menu</span>
-              <img
+              <nuxt-img
                 class="block lg:hidden h-8"
                 width="31px"
                 height="32px"
-                src="~/assets/icons/menu.svg"
+                src="icons/menu.svg"
                 :alt="$t('menu')"
               />
             </button>
@@ -42,17 +42,17 @@
           >
             <div class="flex-shrink-0 flex items-center">
               <NuxtLink :to="initMenu.path">
-                <img
+                <nuxt-img
                   :alt="$t('brand la haus')"
-                  class="block ml-12 md:ml-0 sm:hidden h-8"
+                  class="block ml-12 md:ml-0 md:hidden h-8"
                   width="31px"
                   height="32px"
-                  src="~/assets/icons/logo-mobile.svg"
+                  src="icons/logo-mobile.svg"
                 />
-                <img
+                <nuxt-img
                   :alt="$t('brand la haus')"
-                  class="hidden lg:block h-8"
-                  src="~/assets/icons/logo.svg"
+                  class="hidden md:block h-8"
+                  src="icons/logo.svg"
                   width="125px"
                   height="24px"
                 />
@@ -71,9 +71,25 @@
                 </NuxtLink>
                 <NuxtLink
                   to="/"
-                  class="text-dark font-semibold px-3 py-2 rounded-md"
+                  class="
+                    flex
+                    items-start
+                    justify-center
+                    text-dark
+                    font-semibold
+                    px-3
+                    py-2
+                    rounded-md
+                  "
                 >
-                  Mi Perfil
+                  <p>{{ $t('My Profile') }}</p>
+                  <nuxt-img
+                    :alt="$t('arrow down')"
+                    class="inline-block ml-2"
+                    width="18px"
+                    height="15px"
+                    src="icons/arrow-down-alert.svg"
+                  />
                 </NuxtLink>
               </div>
             </div>
