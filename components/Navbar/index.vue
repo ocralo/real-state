@@ -28,7 +28,7 @@
                 width="31px"
                 height="32px"
                 src="~/assets/icons/menu.svg"
-                alt="Workflow"
+                :alt="$t('menu')"
               />
             </button>
           </div>
@@ -41,20 +41,22 @@
             "
           >
             <div class="flex-shrink-0 flex items-center">
-              <img
-                class="block ml-12 md:ml-0 lg:hidden h-8"
-                width="31px"
-                height="32px"
-                src="~/assets/icons/logo-mobile.svg"
-                alt="Workflow"
-              />
-              <img
-                class="hidden lg:block h-8"
-                src="~/assets/icons/logo.svg"
-                width="125px"
-                height="24px"
-                alt="Workflow"
-              />
+              <NuxtLink :to="initMenu.path">
+                <img
+                  :alt="$t('brand la haus')"
+                  class="block ml-12 md:ml-0 sm:hidden h-8"
+                  width="31px"
+                  height="32px"
+                  src="~/assets/icons/logo-mobile.svg"
+                />
+                <img
+                  :alt="$t('brand la haus')"
+                  class="hidden lg:block h-8"
+                  src="~/assets/icons/logo.svg"
+                  width="125px"
+                  height="24px"
+                />
+              </NuxtLink>
             </div>
             <div class="hidden md:block sm:ml-auto">
               <div class="flex space-x-4">
@@ -63,13 +65,13 @@
                   :key="item.id"
                   :to="item.path"
                   aria-current="page"
-                  class="text-dark px-3 py-2 rounded-md text-sm font-normal"
+                  class="text-dark px-3 py-2 rounded-md font-normal"
                 >
-                  {{ item.name }}
+                  {{ $t(item.name) }}
                 </NuxtLink>
                 <NuxtLink
                   to="/"
-                  class="text-dark font-semibold px-3 py-2 rounded-md text-sm"
+                  class="text-dark font-semibold px-3 py-2 rounded-md"
                 >
                   Mi Perfil
                 </NuxtLink>
@@ -101,7 +103,7 @@
               font-medium
             "
           >
-            {{ item.name }}
+            {{ $t(item.name) }}
           </NuxtLink>
         </div>
       </div>
@@ -110,12 +112,12 @@
 </template>
 
 <script>
-import itemsMenu from './mocks/items-menu.json'
+import { items, init } from './mocks/items-menu.json'
 
 export default {
   name: 'Navbar',
   data() {
-    return { isOpen: false, itemsMenu }
+    return { isOpen: false, itemsMenu: items, initMenu: init }
   },
 }
 </script>
