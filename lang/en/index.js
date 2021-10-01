@@ -1,6 +1,8 @@
 module.exports = {
   welcome: 'welcome',
   'arrow down': 'arrow down',
+  'propiedades guardadas': 'saved properties',
+  'Mis favoritos': 'My Favorites',
   Cundinamarca: 'Cundinamarca',
   Antioquia: 'Antioquia',
   Recursos: 'Recursos',
