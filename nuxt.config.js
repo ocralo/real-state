@@ -48,6 +48,11 @@ export default {
     '@nuxt/image',
   ],
 
+  // Image module
+  image: {
+    dir: 'assets',
+  },
+
   // I18n module
   i18n: {
     defaultLocale: 'es',
