@@ -78,6 +78,10 @@ export default {
       default() {
         return []
       },
+      validator(value) {
+        const objKeys = Object.keys(value)
+        return objKeys.includes('url') || value.length === 0
+      },
     },
   },
   computed: {
