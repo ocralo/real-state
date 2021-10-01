@@ -1,9 +1,9 @@
 <template>
   <div class="w-72">
     <GalleryCard />
-    <p class="text-lg font-semibold mt-3">Mis favoritos</p>
+    <p class="text-lg font-semibold mt-3">{{ $t('Mis favoritos') }}</p>
     <p class="text-sm text-secundary mt-1">
-      {{ totalImages }} propiedades guardadas
+      {{ totalImages }} {{ $t('propiedades guardadas') }}
     </p>
   </div>
 </template>
