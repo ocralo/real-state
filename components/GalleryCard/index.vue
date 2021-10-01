@@ -72,7 +72,14 @@
 import classes from './structure/arrayClass.json'
 export default {
   name: 'GalleryCard',
-  props: { images: { type: Array, required: true } },
+  props: {
+    images: {
+      type: Array,
+      default() {
+        return []
+      },
+    },
+  },
   computed: {
     totalNumberImages() {
       const images = this.images
