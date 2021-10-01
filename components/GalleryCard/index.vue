@@ -84,7 +84,7 @@ export default {
     totalNumberImages() {
       const images = this.images
       const totalNumberImages = images.length - 2
-      return totalNumberImages
+      return totalNumberImages || 0
     },
     threeFirstImages() {
       const images = this.images
