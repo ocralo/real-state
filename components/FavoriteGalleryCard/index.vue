@@ -1,7 +1,7 @@
 <template>
   <div>
-    <GalleryCard />
-    <p class="text-lg font-semibold mt-3">{{ $t('Mis favoritos') }}</p>
+    <GalleryCard :images="images" />
+    <p class="text-lg font-semibold mt-3">{{ title }}</p>
     <p class="text-sm text-secundary mt-1">
       {{ totalImages }} {{ $t('propiedades guardadas') }}
     </p>
@@ -15,7 +15,7 @@ export default {
     title: {
       type: String,
       default() {
-        return 'Mis favoritos'
+        return this.$t('Mis favoritos')
       },
     },
     images: {
@@ -24,11 +24,19 @@ export default {
         return []
       },
       validator(value) {
-        const objKeys = Object.keys(value)
-        return (
-          (objKeys.includes('images') && objKeys.includes('id')) ||
-          value.length === 0
+        const arrayBooleanUrl = value.map((obj) =>
+          Object.prototype.hasOwnProperty.call(obj, 'url')
         )
+
+        const detectUrl = arrayBooleanUrl.includes(false)
+
+        const arrayBooleanId = value.map((obj) =>
+          Object.prototype.hasOwnProperty.call(obj, 'id')
+        )
+
+        const detectId = arrayBooleanId.includes(false)
+
+        return (!detectUrl && !detectId) || value.length === 0
       },
     },
   },
