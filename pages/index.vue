@@ -26,5 +26,37 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'Home',
+  async asyncData({ $axios, $config: { apiURL } }) {
+    try {
+      const listApi = await $axios.$get('/real-estates')
+      // const listApi = await apiURL
+      return { listApi }
+    } catch (error) {
+      return { error }
+    }
+  },
+  computed: {
+    listGallery() {
+      const listApi = this.listApi
+      const { data, included } = listApi
+      const idImagesGallery = data.map(({ attributes, id }) => {
+        const { real_estate_ids: realEstateIds } = attributes
+
+        const imageGallery = realEstateIds.map((idImage) =>
+          included.find(({ id }) => `${id}` === `${idImage}`)
+        )
+
+        const urlImage = imageGallery.map(
+          ({ attributes }) => attributes.gallery_urls[0]
+        )
+
+        return { attributes, urlImage, id }
+      })
+
+      return idImagesGallery
+    },
+  },
+}
 </script>
