@@ -16,15 +16,49 @@
       "
     >
       <FavoriteGalleryCard />
-      <FavoriteGalleryCard />
-      <FavoriteGalleryCard />
-      <FavoriteGalleryCard />
-      <FavoriteGalleryCard />
+      <FavoriteGalleryCard
+        v-for="{ id, urlImage, attributes: { name } } in listGallery"
+        :key="id"
+        :images="urlImage"
+        :title="name"
+      />
       <NewCardList />
     </section>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'Home',
+  async asyncData({ $axios, $config: { apiURL } }) {
+    try {
+      const listApi = await $axios.$get('/real-estates')
+      return { listApi }
+    } catch (error) {
+      return { error }
+    }
+  },
+  computed: {
+    listGallery() {
+      const listApi = this.listApi
+      const { data, included } = listApi
+      const idImagesGallery = data.map(({ attributes, id }) => {
+        const { real_estate_ids: realEstateIds } = attributes
+
+        const imageGallery = realEstateIds.map((idImage) =>
+          included.find(({ id }) => `${id}` === `${idImage}`)
+        )
+
+        const urlImage = imageGallery.map(({ attributes, id }) => ({
+          url: attributes.gallery_urls[0],
+          id,
+        }))
+
+        return { attributes, urlImage, id }
+      })
+
+      return idImagesGallery
+    },
+  },
+}
 </script>
