@@ -1,5 +1,5 @@
 <template>
-  <div class="w-72">
+  <div>
     <GalleryCard />
     <p class="text-lg font-semibold mt-3">{{ $t('Mis favoritos') }}</p>
     <p class="text-sm text-secundary mt-1">
