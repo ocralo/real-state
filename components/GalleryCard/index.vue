@@ -90,8 +90,12 @@ export default {
         return []
       },
       validator(value) {
-        const objKeys = Object.keys(value)
-        return objKeys.includes('url') || value.length === 0
+        const arrayBooleanUrl = value.map((obj) =>
+          Object.prototype.hasOwnProperty.call(obj, 'url')
+        )
+
+        const detectUrl = arrayBooleanUrl.includes(false)
+        return !detectUrl || value.length === 0
       },
     },
   },
