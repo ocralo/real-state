@@ -31,7 +31,6 @@ export default {
   async asyncData({ $axios, $config: { apiURL } }) {
     try {
       const listApi = await $axios.$get('/real-estates')
-      // const listApi = await apiURL
       return { listApi }
     } catch (error) {
       return { error }
