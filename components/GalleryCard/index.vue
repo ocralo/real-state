@@ -1,10 +1,19 @@
 <template>
   <div
-    class="border border-white relative w-72 h-44 rounded-2xl overflow-hidden"
+    class="
+      border border-white
+      relative
+      h-52
+      sm:h-48
+      md:h-56
+      lg:h-64
+      rounded-2xl
+      overflow-hidden
+    "
   >
     <nuxt-img
       v-if="numberImages < 0"
-      class="object-cover bg-white object-left-top w-full h-auto"
+      class="absolute bg-white object-cover object-center w-full h-full"
       src="icons/favorites.svg"
       loading="lazy"
     />
@@ -57,7 +66,9 @@
           flex
           justify-end
           items-center
-          pr-3
+          pr-4
+          sm:pr-4
+          md:pr-5
           text-white
           font-bold
         "
