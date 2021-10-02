@@ -16,10 +16,12 @@
       "
     >
       <FavoriteGalleryCard />
-      <FavoriteGalleryCard />
-      <FavoriteGalleryCard />
-      <FavoriteGalleryCard />
-      <FavoriteGalleryCard />
+      <FavoriteGalleryCard
+        v-for="{ id, urlImage, attributes: { name } } in listGallery"
+        :key="id"
+        :images="urlImage"
+        :title="name"
+      />
       <NewCardList />
     </section>
   </div>
@@ -47,9 +49,10 @@ export default {
           included.find(({ id }) => `${id}` === `${idImage}`)
         )
 
-        const urlImage = imageGallery.map(
-          ({ attributes }) => attributes.gallery_urls[0]
-        )
+        const urlImage = imageGallery.map(({ attributes, id }) => ({
+          url: attributes.gallery_urls[0],
+          id,
+        }))
 
         return { attributes, urlImage, id }
       })
