@@ -95,7 +95,7 @@ export default {
         )
 
         const detectUrl = arrayBooleanUrl.includes(false)
-        return !detectUrl || value.length === 0
+        return (Array.isArray(value) && !detectUrl) || value.length === 0
       },
     },
   },
@@ -106,12 +106,12 @@ export default {
       return totalNumberImages || 0
     },
     threeFirstImages() {
-      const images = this.images
+      const images = this.images || []
       const threeFirstImages = images.slice(0, 3)
       return threeFirstImages
     },
     numberImages() {
-      const threeFirstImages = this.threeFirstImages
+      const threeFirstImages = this.threeFirstImages || []
       const numberImages = threeFirstImages.length - 1 || 0
       return numberImages
     },

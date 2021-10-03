@@ -30,7 +30,7 @@
 <script>
 export default {
   name: 'Home',
-  async asyncData({ $axios, $config: { apiURL } }) {
+  async asyncData({ $axios }) {
     try {
       const listApi = await $axios.$get('/real-estates')
       return { listApi }
@@ -41,22 +41,24 @@ export default {
   computed: {
     listGallery() {
       const listApi = this.listApi
-      const { data, included } = listApi
-      const idImagesGallery = data.map(({ attributes, id }) => {
-        const { real_estate_ids: realEstateIds } = attributes
+      let idImagesGallery = []
+      try {
+        const { data, included } = listApi
+        idImagesGallery = data.map(({ attributes, id }) => {
+          const { real_estate_ids: realEstateIds } = attributes
 
-        const imageGallery = realEstateIds.map((idImage) =>
-          included.find(({ id }) => `${id}` === `${idImage}`)
-        )
+          const imageGallery = realEstateIds.map((idImage) =>
+            included.find(({ id }) => `${id}` === `${idImage}`)
+          )
 
-        const urlImage = imageGallery.map(({ attributes, id }) => ({
-          url: attributes.gallery_urls[0],
-          id,
-        }))
+          const urlImage = imageGallery.map(({ attributes, id }) => ({
+            url: attributes.gallery_urls[0],
+            id,
+          }))
 
-        return { attributes, urlImage, id }
-      })
-
+          return { attributes, urlImage, id }
+        })
+      } catch (error) {}
       return idImagesGallery
     },
   },

@@ -36,7 +36,10 @@ export default {
 
         const detectId = arrayBooleanId.includes(false)
 
-        return (!detectUrl && !detectId) || value.length === 0
+        return (
+          (Array.isArray(value) && !detectUrl && !detectId) ||
+          value.length === 0
+        )
       },
     },
   },
