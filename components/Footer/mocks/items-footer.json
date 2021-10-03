@@ -1,0 +1,84 @@
+{
+  "socialMedia": [
+    {
+      "id": 1,
+      "path": "icons/twitter-logo.svg",
+      "name": "twitter",
+      "url": "https://twitter.com"
+    },
+    {
+      "id": 2,
+      "path": "icons/facebook-app-logo.svg",
+      "name": "facebook",
+      "url": "https://facebook.com"
+    },
+    {
+      "id": 3,
+      "path": "icons/instagram-logo.svg",
+      "name": "instagram",
+      "url": "https://instagram.com"
+    },
+    {
+      "id": 4,
+      "path": "icons/linkedin-logo.svg",
+      "name": "linkedin",
+      "url": "https://www.linkedin.com/"
+    }
+  ],
+  "headquarters": [
+    {
+      "id": 1,
+      "title": "Bogota",
+      "subtitle": "Torre 97 · Piso 7",
+      "direction": "Carrera 16 # 97 - 46",
+      "phone": "+57 317 619 5724"
+    },
+    {
+      "id": 2,
+      "title": "Medellin",
+      "subtitle": "35 Palms Business Tower · Piso 4",
+      "direction": "Carrera 35 # 15b - 143",
+      "phone": "+57 1 514 0716"
+    },
+    {
+      "id": 3,
+      "title": "Cali",
+      "subtitle": "Unicentro Torre B · Piso 6",
+      "direction": "Cra. 100 # 5 - 169",
+      "phone": "+57 1 485 0414"
+    },
+    {
+      "id": 4,
+      "title": "Barranquilla · Cartagena · Santa Marta",
+      "subtitle": "LYD House 98",
+      "direction": "Cra 58 # 96 - 187",
+      "phone": "+57 1 485 0415"
+    }
+  ],
+  "otherInfo": [
+    { "id": 1, "text": "© 2021 La Haus" },
+    { "id": 2, "text": "comunidad@lahaus.com", "url": "https://facebook.com" },
+    {
+      "id": 3,
+      "text": "Términos y Condiciones",
+      "url": "https://instagram.com"
+    },
+    {
+      "id": 4,
+      "text": "Políticas de Tratamiento de Datos",
+      "url": "https://www.linkedin.com/"
+    },
+    {
+      "id": 5,
+      "text": "Política de Cookies",
+      "url": "https://www.linkedin.com/"
+    },
+    { "id": 6, "text": "Quiénes somos", "url": "https://www.linkedin.com/" },
+    {
+      "id": 7,
+      "text": "Trabaja con nosotros",
+      "url": "https://www.linkedin.com/"
+    },
+    { "id": 8, "text": "Mapa del sitio", "url": "https://www.linkedin.com/" }
+  ]
+}

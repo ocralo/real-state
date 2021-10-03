@@ -48,6 +48,11 @@ export default {
     '@nuxt/image',
   ],
 
+  // Image module
+  image: {
+    dir: 'assets',
+  },
+
   // I18n module
   i18n: {
     defaultLocale: 'es',
@@ -60,7 +65,7 @@ export default {
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: { baseURL: process.env.API_URL },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
