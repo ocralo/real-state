@@ -8,7 +8,7 @@
         <nuxt-img
           :alt="$t('brand la haus')"
           class="hidden md:inline-block h-8"
-          src="icons/whatsapp-black.svg"
+          src="/icons/whatsapp-black.svg"
           width="14px"
           height="14px"
         /><span class="ml-2">{{ phone }}</span>

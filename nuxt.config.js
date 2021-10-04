@@ -47,9 +47,7 @@ export default {
   ],
 
   // Image module
-  image: {
-    dir: 'assets',
-  },
+  image: {},
 
   // I18n module
   i18n: {

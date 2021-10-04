@@ -4,7 +4,7 @@
       <nuxt-img
         :alt="$t('brand la haus')"
         class="block"
-        src="icons/logo-icon-white.svg"
+        src="/icons/logo-icon-white.svg"
         width="175px"
         height="35px"
       />
