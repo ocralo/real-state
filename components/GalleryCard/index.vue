@@ -103,16 +103,16 @@ export default {
     totalNumberImages() {
       const images = this.images
       const totalNumberImages = images.length - 2
-      return totalNumberImages
+      return totalNumberImages || 0
     },
     threeFirstImages() {
-      const images = this.images
+      const images = this.images || []
       const threeFirstImages = images.slice(0, 3)
       return threeFirstImages
     },
     numberImages() {
-      const threeFirstImages = this.threeFirstImages
-      const numberImages = threeFirstImages.length - 1
+      const threeFirstImages = this.threeFirstImages || []
+      const numberImages = threeFirstImages.length - 1 || 0
       return numberImages
     },
     classImage() {

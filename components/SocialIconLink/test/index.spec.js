@@ -1,11 +1,10 @@
 import { shallowMount } from '@vue/test-utils'
 import SocialIconLink from '@/components/SocialIconLink/index.vue'
-import mocks from '@/components/Footer/mocks/items-footer.json'
 
 describe('SocialIconLink', () => {
   const build = (propsData) => {
     const wrapper = shallowMount(SocialIconLink, { propsData })
-    return { wrapper, findLink: wrapper.find('a') }
+    return { wrapper }
   }
 
   test('should be render', () => {
@@ -16,17 +15,4 @@ describe('SocialIconLink', () => {
     })
     expect(wrapper.vm).toBeTruthy()
   })
-
-  test.each(mocks.socialMedia)(
-    'should be render to diferents props',
-    ({ url, name, path }) => {
-      const { wrapper } = build({
-        url,
-        name,
-        path,
-      })
-
-      expect(wrapper.vm).toBeTruthy()
-    }
-  )
 })

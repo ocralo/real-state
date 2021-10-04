@@ -15,9 +15,4 @@ describe('FavoriteGalleryCard', () => {
     const { wrapper } = build()
     expect(wrapper.vm).toBeTruthy()
   })
-
-  test('shold be it accepts valid type props', () => {
-    const validator = FavoriteGalleryCard.props.images.validator
-    expect(validator(['image'])).toBeFalsy()
-  })
 })
