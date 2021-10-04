@@ -14,7 +14,7 @@
     <nuxt-img
       v-if="numberImages < 0"
       class="absolute bg-white object-cover object-center w-full h-full"
-      src="icons/favorites.svg"
+      src="/icons/favorites.svg"
       loading="lazy"
     />
     <nuxt-img

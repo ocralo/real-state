@@ -27,7 +27,7 @@
                 class="block lg:hidden h-8"
                 width="31px"
                 height="32px"
-                src="icons/menu.svg"
+                src="/icons/menu.svg"
                 :alt="$t('menu')"
               />
             </button>
@@ -47,12 +47,12 @@
                   class="block ml-12 md:ml-0 md:hidden h-8"
                   width="31px"
                   height="32px"
-                  src="icons/logo-mobile.svg"
+                  src="/icons/logo-mobile.svg"
                 />
                 <nuxt-img
                   :alt="$t('brand la haus')"
                   class="hidden md:block h-8"
-                  src="icons/logo.svg"
+                  src="/icons/logo.svg"
                   width="125px"
                   height="24px"
                 />
@@ -88,7 +88,7 @@
                     class="inline-block ml-2"
                     width="18px"
                     height="15px"
-                    src="icons/arrow-down-alert.svg"
+                    src="/icons/arrow-down-alert.svg"
                   />
                 </NuxtLink>
               </div>

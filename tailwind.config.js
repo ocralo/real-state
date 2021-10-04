@@ -1,4 +1,6 @@
 module.exports = {
+  purge: { enabled: false },
+  darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
       primary: '#3ECFAF',
@@ -12,5 +14,10 @@ module.exports = {
     fontFamily: {
       silka: ['Silka', 'sans-serif'],
     },
+    extend: {},
   },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
 }

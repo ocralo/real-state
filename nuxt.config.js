@@ -20,7 +20,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['~assets/main.css'],
+  css: ['~assets/main.css', '~assets/scss/main.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -36,8 +36,6 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    // https://github.com/nuxt-community/style-resources-module#readme
-    '@nuxtjs/style-resources',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -49,9 +47,7 @@ export default {
   ],
 
   // Image module
-  image: {
-    dir: 'assets',
-  },
+  image: {},
 
   // I18n module
   i18n: {
@@ -69,9 +65,4 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-
-  // style configuration: https://github.com/nuxt-community/style-resources-module#readme
-  styleResources: {
-    scss: ['~assets/scss/main.scss'],
-  },
 }
