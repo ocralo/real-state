@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="bg-white border-b border-ligth">
+    <nav class="bg-white border-b border-ligth fixed top-0 w-full z-50">
       <div class="max-w-8xl mx-auto px-2 sm:px-6 lg:px-8">
         <div class="relative flex items-center justify-between h-16">
           <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
