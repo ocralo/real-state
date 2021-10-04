@@ -31,34 +31,35 @@
 export default {
   name: 'Home',
   async asyncData({ $axios }) {
-    try {
-      const listApi = await $axios.$get('/real-estates')
-      return { listApi }
-    } catch (error) {
-      return { error }
-    }
+    const listApi = await $axios.$get('/real-estates')
+    return { listApi }
+  },
+  data() {
+    return { listApi: {} }
   },
   computed: {
     listGallery() {
       const listApi = this.listApi
       let idImagesGallery = []
-      try {
-        const { data, included } = listApi
-        idImagesGallery = data.map(({ attributes, id }) => {
-          const { real_estate_ids: realEstateIds } = attributes
 
-          const imageGallery = realEstateIds.map((idImage) =>
-            included.find(({ id }) => `${id}` === `${idImage}`)
-          )
+      const data = listApi?.data
+      const included = listApi?.included
 
-          const urlImage = imageGallery.map(({ attributes, id }) => ({
-            url: attributes.gallery_urls[0],
-            id,
-          }))
+      idImagesGallery = data?.map(({ attributes, id }) => {
+        const { real_estate_ids: realEstateIds } = attributes
 
-          return { attributes, urlImage, id }
-        })
-      } catch (error) {}
+        const imageGallery = realEstateIds.map((idImage) =>
+          included.find(({ id }) => `${id}` === `${idImage}`)
+        )
+
+        const urlImage = imageGallery.map(({ attributes, id }) => ({
+          url: attributes.gallery_urls[0],
+          id,
+        }))
+
+        return { attributes, urlImage, id }
+      })
+
       return idImagesGallery
     },
   },
